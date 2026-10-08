@@ -1,0 +1,162 @@
+html = r'''<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14 OCT 🤍</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#fff7fa,#f8e5ec);color:#3d2630;min-height:100vh}
+main{max-width:850px;margin:auto;padding:25px 16px 50px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:60px 20px;border-radius:32px;background:linear-gradient(145deg,#fff,#fde8ef);border:1px solid #efd2dc}
+.orb{position:absolute;border-radius:50%;opacity:.35}
+.o1{width:180px;height:180px;background:#efabc2;right:-70px;top:-70px}
+.o2{width:140px;height:140px;background:#dcb9d0;left:-50px;bottom:-60px}
+.heart{font-size:45px;animation:beat 1.6s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}}
+.date{font-size:clamp(55px,13vw,100px);font-weight:900;letter-spacing:5px;color:#994861;margin:15px 0}
+.sub{color:#876b76;font-size:16px;line-height:1.8}
+.buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+button{border:1px solid #e7becb;background:white;color:#93465e;border-radius:50px;padding:13px 21px;font-size:15px;font-weight:bold;cursor:pointer}
+button.primary{background:#b85d78;color:white}
+button:active{transform:scale(.97)}
+.card{margin-top:18px;padding:27px;border-radius:25px;background:#fff;border:1px solid #efd9e1;animation:up .45s ease}
+.hidden{display:none}
+@keyframes up{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+h2{margin-top:0;color:#8e4059}
+.message{font-size:17px;line-height:2.1;color:#684f59}
+.line{height:1px;background:#f0dce3;margin:20px 0}
+.wish{font-size:20px;font-weight:bold;text-align:center;line-height:1.9;color:#7d3e54}
+.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.memory{padding:18px 10px;text-align:center;background:#fff8fa;border:1px solid #f0dbe2;border-radius:18px}
+.icon{font-size:28px;display:block;margin-bottom:8px}
+footer{text-align:center;margin-top:25px;color:#987a84;font-size:13px}
+@media(max-width:550px){.memories{grid-template-columns:1fr}.hero{padding:45px 15px}.date{letter-spacing:2px}}
+</style>
+</head>
+
+<body>
+<main>
+
+<section class="hero">
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+
+<div class="heart">♡</div>
+<div class="sub">في تاريخ صغير... بدأت حكاية كبيرة
+</div>
+
+<div class="date">14 OCT</div>
+
+<div class="sub">
+مو مجرد تاريخ،<br>
+هذا اليوم أنولدت فيه أحلى بنت في العالم،
+البنت اللي أشوفها كل شيء في عيني. 🤍
+هذا يوم انولد فيه شخص يستحق كل الأشياء الحلوة. 🤍
+
+</div>
+
+<div class="buttons">
+<button class="primary" onclick="openLetter()">افتح المفاجأة ✨</button>
+<button onclick="openWish()">أمنيـة صغيرة 🌙</button>
+</div>
+</section>
+
+<section id="letter" class="card hidden">
+<h2>إلى الشخص الغالي 🤍</h2>
+
+<div class="message">
+في هذا اليوم، أتمنى لك سنة مختلفة عن كل السنوات اللي راحت...
+سنة فيها راحة لقلبك، وضحكة ما تفارقك، وأشياء جميلة تجيك من حيث ما تتوقع.
+<br><br>
+أتمنى كل أمنية خبّيتها بقلبك تلقى طريقها إليك،
+وكل لحظة صعبة تصير ذكرى تقول بعدها:
+«عدّت، والحمدلله إنها عدّت».
+<br><br>
+وجودك بحد ذاته شيء يستحق الاحتفال...
+واليوم مو بس عيد ميلادك،
+اليوم ذكرى اليوم اللي صار فيه العالم أجمل بشخص مثلك. 🤍
+</div>
+
+<div class="line"></div>
+
+<div class="wish">
+كل عام وأنت بخير... 🎂<br>
+وكل عام وقلبك أقرب لكل شيء يتمناه.
+</div>
+
+<div class="memories">
+<div class="memory"><span class="icon">🌷</span>سنة جميلة</div>
+<div class="memory"><span class="icon">✨</span>أمنيات تتحقق</div>
+<div class="memory"><span class="icon">🤍</span>راحة وسعادة</div>
+</div>
+</section>
+
+<section id="wish" class="card hidden">
+<h2>تمنّى أمنية... 🌙</h2>
+
+<div class="message">
+خذ نفسًا عميقًا، اقفل عيونك لثواني،
+وفكّر في الشيء اللي تتمنى يصير في سنتك الجديدة.
+</div>
+
+<div class="buttons">
+<button class="primary" id="magicButton" onclick="makeWish()">جاهز ✨</button>
+</div>
+
+<div id="magicText" class="wish hidden" style="margin-top:22px">
+«يا رب تكون سنتك الجديدة بداية لكل شيء جميل كنت تنتظره.» 🤍
+</div>
+</section>
+
+<section id="final" class="card hidden">
+<h2>وفي النهاية... 🎀</h2>
+
+<div class="wish">
+لو كان عندي أمنية واحدة لك، بتكون:
+<br><br>
+أنك تعيش أيامًا تشبه قلبك...
+جميلة، هادئة، ومليانة حب. 🤍
+</div>
+
+<div class="line"></div>
+
+<div style="text-align:center;color:#80616c">
+14 OCT · يوم يستحق أن يُحتفل به كل سنة.
+</div>
+</section>
+
+<footer>
+صُنع بكل مشاعر 🤍 · 14 OCT
+</footer>
+
+</main>
+
+<script>
+function openLetter(){
+  document.getElementById("letter").classList.remove("hidden");
+  document.getElementById("final").classList.remove("hidden");
+  document.getElementById("letter").scrollIntoView({behavior:"smooth"});
+}
+
+function openWish(){
+  document.getElementById("wish").classList.remove("hidden");
+  document.getElementById("wish").scrollIntoView({behavior:"smooth"});
+}
+
+function makeWish(){
+  document.getElementById("magicText").classList.remove("hidden");
+  const button=document.getElementById("magicButton");
+  button.textContent="الأمنية في القلب 🤍";
+  button.disabled=true;
+}
+</script>
+
+</body>
+</html>'''
+
+path="/mnt/data/14_OCT_Birthday.html"
+with open(path,"w",encoding="utf-8") as f:
+    f.write(html)
+
+print(path)
